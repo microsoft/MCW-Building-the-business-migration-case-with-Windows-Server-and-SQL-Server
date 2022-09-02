@@ -197,11 +197,40 @@ Directions:  With all participants in the session, the facilitator/SME presents 
 
 Tailspin Toys is a global manufacturer of children’s toys. Their mission critical workloads are currently hosted in an on-premises data center and are beginning a journey to modernize and migrate into the cloud using Microsoft Azure.
 
-The CTO, Kaylee Frye, has already had the Technical Architects at Tailspin Toys being performing discovery and analysis to define what it’ll take to migrate to the cloud. They are looking to utilize modern cloud services and DevOps operations reduce IT infrastructure costs and streamline IT operations.
+The CTO, Kaylee Frye, has already had the Technical Architects at Tailspin Toys assessing their current environment and what it will take to migrate to the cloud. They are looking to optimize their technology investments by reducing technical debt, streamline operations, and simplify their DevOps workflow.
 
-Tailspin has already completed their first round of analysis to identify the Windows Server and SQL Server VMs that are good candidates to migrate to the cloud. They have compiled an initial list of servers and applications they believe can be migrated and some they’ll need to keep on-premises for now.
+Tailspin has already completed their first round of analysis to identify the apps and workloads to migrate first. These workloads are hosted using SQL Server and Windows Server VMs. They have compiled an initial list of servers they believe can be migrated now, in addition to some they’ll need to retain on-premises for now.
 
-In preparations for their cloud adoption journey, Tailspin has already had an Azure ExpressRoute circuit setup, along with a Hub and Spoke Virtual Network design. This will provide them with the necessary landing zone for where their workloads will be hosted in Azure. Since they are new to Azure, they will need some additional help in the migrations and modernization of their Windows Server and SQL Server VMs.
+Their on-premises environment consists of over 250 servers and VMs, although, they don't plan to migrate all of them to Azure. The fear of breaking an existing system during their migration is the reason they've identified just a few servers / VMs to begin the migration.
+
+The first workload they want to migrate to Azure consists of:
+
+- Web Application Front-end
+  - ASP.NET MVC using .NET Framework 4.7
+  - 2x Windows Server 2012 VMs
+    - each with 2 CPU cores and 32 GB memory
+- REST API Back-end
+  - ASP.NET MVC using .NET Framework 4.7
+  - 2x Windows Server 2012 VMs
+    - each with 4 CPU cores and 32 GB Memory
+- Application Databases
+  - SQL Server 2012
+  - Data replication across 2x Windows Server 2012 VMs
+    - each with 8 CPU cores and 64 GB Memory
+  - 3x databases with the following storage sizes
+    - Database 1: 1.2 TB
+    - Database 2: 435 GB
+    - Database 3: 50 GB
+
+The workloads they believe must be retained on-premises consist of:
+
+- Windows Domain Controllers
+- File Shares hosted on Windows Server 2012
+- Multiple Ubuntu 18.04 Linux servers
+
+The Virtual Machines hosted in their on-premises data center are hosted using Windows Hyper-V.
+
+In preparations for their cloud adoption journey, Tailspin has already had an Azure ExpressRoute circuit provisioned to connect to their data center along with a Hub and Spoke Virtual Network topology in Azure. The ExpressRoute circuit is configured with 2 Gbps bandwidth. This will provide them with the necessary Azure networking infrastructure to migrate their workloads. Since they are new to Azure, they will need some additional help in the migrations and modernization of their Windows Server and SQL Server workloads.
 
 ### Customer needs
 
@@ -209,13 +238,19 @@ In preparations for their cloud adoption journey, Tailspin has already had an Az
 
 2. ?
 
+3. ?
+
 ### Customer objections
 
-1. ?
+1. What kind of downtime will be incurred when migrating the Windows Server and SQL Server VMs to Azure?
 
-2. ?
+2. Will we be able to rollback to the on-premises VMs if the migration fails?
+
+3. ?
 
 ### Infographic for common scenarios
+
+DIAGRAM: AZURE HUB-SPOKE NETWORKING
 
 
 ## Step 2: Design a proof of concept solution
@@ -294,6 +329,8 @@ Directions: Reconvene with the larger group to hear the facilitator/SME share th
 |----------|:-------------:|
 | **Description** | **Links** |
 | Microsoft Azure Reference Architectures| <https://docs.microsoft.com/azure/guidance/guidance-architecture> |
+| Hub-spoke network topology in Azure | <https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke> |
+| Extend an on-premises network using ExpressRoute | <https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/expressroute> |
 
 # Building a resilient IaaS architecture whiteboard design session trainer guide
 
