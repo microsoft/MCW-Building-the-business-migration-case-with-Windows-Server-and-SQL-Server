@@ -234,11 +234,13 @@ In preparations for their cloud adoption journey, Tailspin has already had an Az
 
 ### Customer needs
 
-1. ?
+1. Migrate existing workloads to Azure as efficiently as possible.
 
-2. ?
+2. Lower the management burden with a consolidated view to manage all VMs and Servers cross Azure and on-premises.
 
 3. ?
+
+4. ?
 
 ### Customer objections
 
@@ -246,12 +248,17 @@ In preparations for their cloud adoption journey, Tailspin has already had an Az
 
 2. Will we be able to rollback to the on-premises VMs if the migration fails?
 
-3. ?
+3. Tailspin has negotiated an Enterprise Agreement (EA) with Microsoft for their Azure consumption. Any cost estimates need to reflect their EA discount.
+
+4. ?
 
 ### Infographic for common scenarios
 
-DIAGRAM: AZURE HUB-SPOKE NETWORKING
+**Hub-spoke network topology in Azure**
+![Hub-spoke network topology in Azure](images/diagram-azure-vnet-hub-spoke.png "Hub-spoke network topology in Azure")
 
+**Azure Arc control plan**
+![Azure Arc control plan](images/diagram-azure-arc-control-plane.png "Azure Arc control plan")
 
 ## Step 2: Design a proof of concept solution
 
@@ -331,6 +338,7 @@ Directions: Reconvene with the larger group to hear the facilitator/SME share th
 | Microsoft Azure Reference Architectures| <https://docs.microsoft.com/azure/guidance/guidance-architecture> |
 | Hub-spoke network topology in Azure | <https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke> |
 | Extend an on-premises network using ExpressRoute | <https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/expressroute> |
+| Azure Arc overview | <https://docs.microsoft.com/azure/azure-arc/overview> |
 
 # Building a resilient IaaS architecture whiteboard design session trainer guide
 
