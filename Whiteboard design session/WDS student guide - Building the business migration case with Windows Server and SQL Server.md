@@ -154,11 +154,25 @@ Directions:  With your team, answer the following questions and be prepared to p
 
 Directions: With your team, respond to the following questions:
 
-1. ?
+1. How will you migrate the on-premises workloads to Azure?
 
-2. ?
+2. What is the appropriate pricing tier for the workloads in Azure?
 
-3. ?
+3. How will you migrate the SQL Server workloads to Azure?
+
+4. How will you ensure as little downtime during the migration as possible?
+
+5. How will they reduce the burden of managing both on-premises and Azure workloads?
+
+**Pricing**
+
+Provide an estimated cost for the workloads being migrated in your solution.
+
+- Be sure to cover all aspects of the design, including the primary site, DR solution, backup solution, and monitoring costs
+
+- What's the best option for hosting the SQL Server workloads?
+
+- Have you included all appropriate cost-saving measures?
 
 **Prepare**
 
@@ -210,3 +224,7 @@ Directions: Reconvene with the larger group to hear the facilitator/SME share th
 |----------|:-------------:|
 | **Description** | **Links** |
 | Microsoft Azure Reference Architectures| <https://docs.microsoft.com/azure/guidance/guidance-architecture> |
+| Hub-spoke network topology in Azure | <https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke> |
+| Extend an on-premises network using ExpressRoute | <https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/expressroute> |
+| Azure Arc overview | <https://docs.microsoft.com/azure/azure-arc/overview> |
+| What is Azure SQL Managed Instance? | https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview |

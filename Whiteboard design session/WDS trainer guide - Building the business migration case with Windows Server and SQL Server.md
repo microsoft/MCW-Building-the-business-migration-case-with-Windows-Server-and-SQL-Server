@@ -83,7 +83,7 @@ An amazing trainer:
 
 - Effectively leads the feedback process.
 
-## Whiteboard design session flow 
+## Whiteboard design session flow
 
 Each whiteboard design session uses the following flow:
 
@@ -208,7 +208,7 @@ The first workload they want to migrate to Azure consists of:
 - Web Application Front-end
   - ASP.NET MVC using .NET Framework 4.7
   - 2x Windows Server 2012 VMs
-    - each with 2 CPU cores and 32 GB memory
+    - each with 2 CPU cores and 16 GB memory
 - REST API Back-end
   - ASP.NET MVC using .NET Framework 4.7
   - 2x Windows Server 2012 VMs
@@ -280,11 +280,25 @@ Directions: With your team, answer the following questions and be prepared to pr
 
 Directions: With your team, respond to the following questions:
 
-1. ?
+1. How will you migrate the on-premises workloads to Azure?
 
-2. ?
+2. What is the appropriate pricing tier for the workloads in Azure?
 
-3. ?
+3. How will you migrate the SQL Server workloads to Azure?
+
+4. How will you ensure as little downtime during the migration as possible?
+
+5. How will they reduce the burden of managing both on-premises and Azure workloads?
+
+**Pricing**
+
+Provide an estimated cost for the workloads being migrated in your solution.
+
+- Be sure to cover all aspects of the design, including the primary site, DR solution, backup solution, and monitoring costs
+
+- What's the best option for hosting the SQL Server workloads?
+
+- Have you included all appropriate cost-saving measures?
 
 **Prepare**
 
@@ -339,6 +353,7 @@ Directions: Reconvene with the larger group to hear the facilitator/SME share th
 | Hub-spoke network topology in Azure | <https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke> |
 | Extend an on-premises network using ExpressRoute | <https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/expressroute> |
 | Azure Arc overview | <https://docs.microsoft.com/azure/azure-arc/overview> |
+| What is Azure SQL Managed Instance? | https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview |
 
 # Building a resilient IaaS architecture whiteboard design session trainer guide
 
@@ -388,14 +403,72 @@ Directions: Reconvene with the larger group to hear the facilitator/SME share th
 
 ## Preferred solution
 
+1. How will you migrate the on-premises workloads to Azure?
+
+2. What is the appropriate pricing tier for the workloads in Azure?
+
+3. How will you migrate the SQL Server workloads to Azure?
+
+4. How will you ensure as little downtime during the migration as possible?
+
+5. How will they reduce the burden of managing both on-premises and Azure workloads?
+
+**Pricing**
+
+1. Provide an estimated cost for the workloads being migrated in your solution.
+
+    - Be sure to cover all aspects of the design, including the primary site, DR solution, backup solution, and monitoring costs
+
+    - What's the best option for hosting the SQL Server workloads?
+
+    - Have you included all appropriate cost-saving measures?
+
+    **Solution**
+
+    Pricing Azure solutions is a complex task. The example solution below includes many assumptions, for example on virtual machine size. These need to be validated with Tailspin Toys.
+
+    _Web Application Front-end_
+    |    |            |            |
+    |----------|:-------------:|:-------------:|
+    | **Component** | **Details / Assumptions** | **Est. Monthly Cost (USD)** |
+    | Web VMs | 2x D4s v5 VMs (4 vCores, 16 GiB RAM) & Windows Server 2022 | $140.00 each |
+
+    _REST API Back-end_
+    |    |            |            |
+    |----------|:-------------:|:-------------:|
+    | **Component** | **Details / Assumptions** | **Est. Monthly Cost (USD)** |
+    | Web VMs | 2x D8s v5 VMs (8 vCores, 32 GiB RAM) & Windows Server 2022 | $280.00 each|
+
+    > **NOTE:** Some discussion with Tailspin Toys may be needed to determine if additional changes to the choice of VM sizes and number of VMs could further lower hosting cost. Load balancing across a larger number of smaller VMs may help lower cost. Also, it's possible Azure App Service (PaaS services) could be an additional options for hosting the Front-end Web application and the Back-end REST API depending on the clients needs.
+
+    _Application Databases_
+    |    |            |            |
+    |----------|:-------------:|:-------------:|
+    | **Component** | **Details / Assumptions** | **Est. Monthly Cost (USD)** |
+    | Azure SQL Managed Instance | 16 vCores Premium-series General Purpose (7 GB RAM/vCore) & 2 TB storage| $1,265.92 |
+
+    > **NOTE:** Azure SQL Managed Instance should be configured with the Azure Hybrid Benefit to save up to 55% with the SQL Server licenses they already own.
+
+    _Total Cost of Migrated Workloads to Azure_
+
+    This is the total estimated monthly cost for all the Windows Server and SQL Server workloads migrated to Azure.
+    |           |                         |
+    |-----------|:-----------------------:|
+    | Component | Est. Monthly Cost (USD) |
+    | Front-end Web VMs | 2x $140.00 |
+    | Back-end VMs | 2x $280.00 |
+    | SQL MI | $1,265.92 |
+    | ** TOTAL | **$2,105.92** |
 
 ## Checklist of preferred objection handling
 
-1. ?
+1. What kind of downtime will be incurred when migrating the Windows Server and SQL Server VMs to Azure?
 
-2. ?
+2. Will we be able to rollback to the on-premises VMs if the migration fails?
 
-3. ?
+3. Tailspin has negotiated an Enterprise Agreement (EA) with Microsoft for their Azure consumption. Any cost estimates need to reflect their EA discount.
+
+4. ?
 
 ## Customer quote (to be read back to the attendees at the end)
 
