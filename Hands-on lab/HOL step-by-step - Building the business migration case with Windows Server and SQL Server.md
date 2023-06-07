@@ -504,11 +504,11 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
 
 3. Enter the **Username** and **Password**, then select **Connect**.
 
-    ![The Bastion pane is shown for the VM with the Username and Password values entered and fields highlighted.](images/azure-portal-vm-bastion-username-password-entered.png "Bastion credentials shown entered")
-
     > **Note**: When the VM was created the credentials were set up as:
     - **Username**: `demouser`
     - **Password**: `demo!pass123`
+
+    ![The Bastion pane is shown for the VM with the Username and Password values entered and fields highlighted.](images/azure-portal-vm-bastion-username-password-entered.png "Bastion credentials shown entered")
 
 4. Once connected to the Hyper-V Host VM, open the **Start menu**, then search for and run the **Hyper-V Manager**.
 
