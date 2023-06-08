@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-September 2022
+June 2023
 
 </div>
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2022 Microsoft Corporation. All rights reserved.
+© 2023 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -69,20 +69,22 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 Tailspin Toys is a global manufacturer of children’s toys that was founded in 1957 with its global headquarters located in Milwaukee, WI. Their mission-critical workloads are currently hosted in an on-premises datacenter and they are beginning a journey to modernize and migrate into the cloud using Microsoft Azure.
 
-During the Envision Workshop, Kaylee Frye, CTO of Tailspin Toys, saw the value of digital transformation, adopting the Microsoft Azure cloud, and modernizing their infrastructure. She has already had the Technical Architects at Tailspin Toys begin assessing their current environment and what it will take to migrate to the cloud. They are looking to optimize their technology investments by reducing technical debt, streamlining operations, and simplifying their DevOps workflow. According to Kaylee Frye, "Our development teams have already begun adopting DevOps strategies and implemented CI/CD (continuous integration and continuous delivery) pipelines with Azure DevOps. We really look forward to better streamlining IT operations as we adopt Microsoft Azure for the infrastructure too."
+During the Envision Workshop, Kaylee Frye, CTO of Tailspin Toys, saw the value of digital transformation, adopting the Microsoft Azure cloud, and modernizing their infrastructure. This transformation will be crucial, as much of their on-premises datacenter hardware is scheduled to be either retired or replaced within 24 months. Kaylee has already had the Technical Architects at Tailspin Toys begin assessing their current environment and what it will take to migrate to the cloud. They are looking to optimize their technology investments by reducing technical debt, streamlining operations, and simplifying their DevOps workflow. According to Kaylee Frye, "Our development teams have already begun adopting DevOps strategies and implemented CI/CD (continuous integration and continuous delivery) pipelines with Azure DevOps. We really look forward to better streamlining IT operations as we adopt Microsoft Azure for the infrastructure too."
 
 Tailspin has already completed the first round of analysis to identify the applications and workloads to migrate first. These workloads are hosted using SQL Server and Windows Server VMs. They have compiled an initial list of servers they believe can be migrated now, in addition to some they’ll need to retain on-premises.
 
-Their on-premises environment consists of over 250 servers and VMs, although, they don't plan to migrate all of them to Azure. They want to implement a phased approach to the migration, so they've identified just a few VMs to begin with.
+Their on-premises environment consists of over 250 servers and VMs. They don't plan to migrate all the on-premises servers to Azure. They want to implement the Azure migration in multiple phases. During the first phase, they want to begin with a POC migration using a workload they've identified that includes just a few VMs.
 
-The first workload they want to migrate to Azure consists of:
+The initial workload they've identified for the first phase of the Azure migration consists of:
 
 - Web Application Front End
   - ASP.NET MVC using .NET Framework 4.7
+  - Application is accessible via a public DNS endpoint
   - 2x Windows Server 2012 VMs
     - Each with 2 CPU cores and 16 GB Memory
 - REST API Back End
   - ASP.NET MVC using .NET Framework 4.7
+  - REST API is accessible via Web application over a privately accessible DNS endpoint
   - 2x Windows Server 2012 VMs
     - Each with 4 CPU cores and 32 GB Memory
 - Application Databases
@@ -94,6 +96,8 @@ The first workload they want to migrate to Azure consists of:
     - Database 2: 435 GB
     - Database 3: 50 GB
 
+This initial workload is not a mission critical application. However, it is representative of the typical VMs, databases and application architectures that are common across many of the other workloads that will be migrated to Azure. They've identified this workload as a good candidate for the first phase, POC migration to gain their confidence in migrating their mission critical workloads in later phases of the migration migration.
+
 They have identified several different types of on-premises workloads that may not be migrated to Azure, but would like some advice on how to handle these:
 
 - Windows Domain Controllers
@@ -104,7 +108,9 @@ They have identified several different types of on-premises workloads that may n
 
 The virtual machines hosted in their on-premises datacenter are hosted using Windows Hyper-V. Some of the smaller .NET Core web applications in the identified workloads are planned to be phased out, so the VMs hosting those workloads will remain on-premises.
 
-In preparations for their cloud adoption journey, Tailspin has already had an Azure ExpressRoute circuit provisioned to connect to their on-premises datacenter along with a Hub and Spoke Virtual Network topology in Azure. The ExpressRoute circuit is configured with 2 Gbps bandwidth to connect to the Azure Networking that has been set up in the North Central US region. This will provide them with the necessary Azure networking infrastructure to migrate their workloads. Since they are new to Azure, they will need some additional help in the migrations and modernization of their Windows Server and SQL Server workloads.
+Backup and disaster recovery is implemented already for the on-premises servers. They want to keep the existing process in place for the on-premises servers. However, a backup, disaster recovery, and multiple Azure region replication strategy will need to be determined for the VMs and SQL servers that are migrated to Azure.
+
+In preparations for their cloud adoption journey, Tailspin has already worked with a service provider to get an Azure ExpressRoute circuit provisioned for connecting to their on-premises datacenter. They also set up a Hub and Spoke Virtual Network topology in Azure that will be utilized during the migration. The ExpressRoute circuit is configured with 2 Gbps bandwidth to connect to the Azure Networking that has been set up in the North Central US region. This will provide them with the necessary Azure networking infrastructure to migrate their workloads. Since they are new to Azure, they will need some additional help in the migrations and modernization of their Windows Server and SQL Server workloads.
 
 ### Customer needs
 
@@ -114,7 +120,7 @@ In preparations for their cloud adoption journey, Tailspin has already had an Az
 
 3. Security is extremely important when integrating the on-premises network and workloads with Microsoft Azure.
 
-4. With Windows Server 2012 extended support ending October 10, 2023, the new Azure VMs will need to be deployed using a newer version of Windows Server.
+4. With Windows Server 2012 and Windows Server 2012 R2 extended support ending October 10, 2023, the new Azure VMs will need to be deployed using a newer version of Windows Server.
 
 ### Customer objections
 
@@ -162,7 +168,7 @@ Directions: With your team, respond to the following questions:
 
 _High-level architecture_
 
-Design an migration solution that addresses the needs and requirements of the organization. Provide details of your implementation. Make sure to document your design with a diagram along with addressing the questions. Address the requirements in the following areas:
+Design a migration solution that addresses the needs and requirements of the organization. Provide details of your implementation. Make sure to document your design with a diagram along with addressing the questions. Address the requirements in the following areas:
 
 _Migration_
 
