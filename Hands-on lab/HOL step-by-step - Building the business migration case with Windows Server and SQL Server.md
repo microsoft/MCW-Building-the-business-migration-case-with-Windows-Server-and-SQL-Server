@@ -68,7 +68,7 @@ At the end of this hands-on lab, you will be better able to set up a Windows Ser
 
 ![Diagram showing on-premises network connected to Azure using Azure ExpressRoute with a Hub and Spoke network in Azure. The Spoke VNet contains the migrated Front-end, Back-end, and SQL Database workloads running within Subnets inside the Spoke VNet in Azure.](images/PreferredSolutionDiagram.png "Preferred Solution Diagram")
 
-The diagram shows an on-premise network connected to Azure using Azure ExpressRoute with a Hub and Spoke network in Azure. The Spoke VNet contains the migrated Front-end, Back-end, and SQL Database workloads running within Subnets inside the Spoke VNet in Azure.
+The diagram shows an on-premises network connected to Azure using Azure ExpressRoute with a Hub and Spoke network in Azure. The Spoke VNet contains the migrated Front-end, Back-end, and SQL Database workloads running within Subnets inside the Spoke VNet in Azure.
 
 ## Requirements
 
@@ -82,7 +82,7 @@ Refer to the Before the hands-on lab setup guide manual before continuing to the
 
 Duration: 75 minutes
 
-Tailspin Toys needs to migrate their on-premises SQL Server database to Azure SQL Managed Instance. This is part of the migration strategy defined to migrate Tailspin Toys workloads to Azure.
+Tailspin Toys need to migrate their on-premises SQL Server database to Azure SQL Managed Instance. This is part of the migration strategy defined to migrate Tailspin Toys workloads to Azure.
 
 In this exercise, you will go through the steps necessary to migrate Tailspin Toys' on-premises SQL Server database to Azure SQL Managed Instance.
 
@@ -122,7 +122,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     <https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer>
 
-8. Select **Run** to run the **.NET Framework 4.8 Runtime** installer once it's finished downloading, and follow the prompts to install the .NET Framework.
+8. Select **Run** to run the **.NET Framework 4.8 Runtime** installer once it's finished downloading and follow the prompts to install the .NET Framework.
 
     ![The .NET Framework 4.8 Setup wizard is shown.](images/2022-10-07-21-14-05.png ".NET Framework 4.8 Setup")
 
@@ -166,7 +166,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     ![The Select sources step is shown with the WideWorldImporters database shown as previously selected and the Start Assessment button is highlighted.](images/ms-data-migration-assistant-assessment-start-assessment-button.png "Data Migration Assistant with the Start Assessment button highlighted")
 
-7. On the **Review results** pane, you should see a message that states "**There are no feature parity issues with your server instance.**"
+7. On the **Review results** pane, you should see a message that states, "**There are no feature parity issues with your server instance.**"
 
     ![The Review results step is shown with the 'There are no feature parity issues with your server instance' message shown.](images/ms-data-migration-assistant-assessment-no-feature-parity-issues.png "Data Migration Assistant showing there are no feature parity issues")
 
@@ -279,7 +279,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     ![The View/Select button to choose the Azure SQL Managed Instance to migrate to is highlighted.](images/2022-10-13-14-36-48.png "View/Select Azure SQL Managed Instance button")
 
-7. Select the **WideWorldImporters** database, and you should see a message stating "`No issues for migrating to Azure SQL Managed Instance.`", then select the **Select** button.
+7. Select the **WideWorldImporters** database, and you should see a message stating, "`No issues for migrating to Azure SQL Managed Instance.`", then select the **Select** button.
 
     ![WideWorldImporters database selected and 'no issues' message shown.](images/2022-09-23-15-01-58.png "No issues found message is shown")
 
@@ -291,7 +291,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     ![Step 3 Azure SQL target is shown with the Azure account entered and the Location, Resource group, and Azure SQL Managed Instance resource selected as the target for the migration.](images/azure-data-studio-migrate-step-3.png "Step 3: Azure SQL target")
 
-10. On **Step 4: Azure Database Migration Service**, keep **Online migration** selected. , then select **Next**.
+10. On **Step 4: Azure Database Migration Service**, keep **Online migration** selected. Select **Next**.
 
     ![Step 4 Migration mode is shown with the Online migration option selected.](images/azure-data-studio-migrate-step-4.png "Step 4: Migration mode")
 
@@ -519,10 +519,10 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
 6. Once connected to the **OnPremVM** VM within Hyper-V, sign in using the **Administrator** account and the password of `demo!pass123`.
 
     > **Note**: If you encounter that the **OnPremVM** has **No Internet Connection**, go back into the `tailspin-onprem-hyperv-vm` Hyper-V Host VM and perform the following steps:
-    > - Open the **Network Connections**
+    > - Open the **Network Connections**.
     > - Locate the **Ethernet** connection and right-click it.
-    > - Select **Properties**
-    > - Select the **Sharing** tab
+    > - Select **Properties**.
+    > - Select the **Sharing** tab.
     > - Disable and re-enable **Internet Connection Sharing** on this connection.
     >
     > You may see a warning message when disabling it and re-enabling it, but it will still work to restore Internet Connection Sharing with the **OnPremVM** that is connected through the Host VM's network connection.
@@ -542,7 +542,7 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
     > - Install KB2919442 from <https://www.microsoft.com/en-us/download/details.aspx?id=42153>
     > - Install KB2919355 from <https://www.microsoft.com/en-us/download/details.aspx?id=42334>
     >
-    > Be sure to restart the VM after installing the updates, before you continue with the .NET Framework install.
+    > Be sure to restart the VM after installing the updates and before you continue with the .NET Framework install.
     >
     > ![The blocking issue warning of the .NET Framework installer is shown with the message for the blocking issue highlighted.](images/dot-net-framwork-blocking-issue.png "Blocking issue warning with message highlighted")
 
@@ -552,7 +552,7 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
 
     > **Note**: Within the Hyper-V Virtual Machine Connection window, you may need to use the **Clipboard** -> **Type clipboard text** menu option to paste into the **OnPremVM**.
 
-11. Run the full script. This will install the Azure Arc agent and Arc-enable the VM. When the script opens up a browser window, enter your credentials to authenticate with Azure.
+11. Run the full script. This will install the Azure Arc agent and Arc-enable the VM. When the script opens a browser window, enter your credentials to authenticate with Azure.
 
     > **Note**: When the Azure Arc script opens a new browser window to authenticate you with Azure, be sure to use an Organization Account with permissions to create `Microsoft.HybridCompute/machines` resources. Using a Personal Account is not supported and will result in a `AZCM0042: Failed to Create Resource` error message.
 
@@ -580,7 +580,7 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
 
     ![The Capabilities section of the Server- Azure Arc pane is shown with the list of capabilities to choose from.](images/azure-portal-server-azure-arc-capabilities.png "Azure Arc capabilities listed on the Server - Azure Arc pane")
 
-5. Select **Extensions** under **Settings**. This is where you can install Extensions on the Azure Arc-enabled virtual machine. For example, the **Custom Script Extension for Windows - Azure Arc** extension can be used to download PowerShell scripts and files from Azure storage, and launch a PowerShell script on the machine.
+5. Select **Extensions** under **Settings**. This is where you can install Extensions on the Azure Arc-enabled virtual machine. For example, the **Custom Script Extension for Windows - Azure Arc** extension can be used to download PowerShell scripts and files from Azure storage and launch a PowerShell script on the machine.
 
     ![The Extensions pane for the Server - Azure Arc resource is shown with the Extensions link under Settings highlighted.](images/azure-poral-server-azure-arc-extensions.png "Azure Portal Server - Azure Arc pane showing Extensions")
 
