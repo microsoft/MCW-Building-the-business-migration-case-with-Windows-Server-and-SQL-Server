@@ -53,7 +53,7 @@ In this task, you will retrieve the Id for your user account / login from Azure 
 
 2. At the top of the Azure Portal, select the **Cloud Shell** icon.
 
-3. In the **Cloud Shell** run the following Azure CLI command. This will retrieve the Azure AD information for your login.
+3. In the **Cloud Shell**, run the following Azure CLI command. This will retrieve the Azure AD information for your login.
 
     ```bash
     az ad signed-in-user show
@@ -63,12 +63,13 @@ In this task, you will retrieve the Id for your user account / login from Azure 
 
     ![Command-line with signed in users Id and Name from Azure AD are highlighted.](images/2022-12-06-00-35-58.png "Command-line with signed in users Id and Name from Azure AD are highlighted.")
 
-    > **Note**: The ARM Template wil use this user Id and Name as the Administrator for the Azure SQL Managed Instance resource. This user must be an Azure AD user, and cannot be a personal Microsoft Account.
-    > If you need to lookup an alternative user to use for this, then run the following command instead:
+    > **Note**: The ARM Template will use this user Id and Name as the Administrator for the Azure SQL Managed Instance resource. This user must be an Azure AD user and cannot be a personal Microsoft Account.
+    > If you need to, look up an alternative user to use for this, then run the following command instead:
+    > 
     > ```bash
     > az ad user show --id <azure-login>
     > ```
-    > Replace the `<azure-login>` placeholder with the users email login. Ex: `user@domain.onmicrosoft.com`
+    > Replace the `<azure-login>` placeholder with the user's email login. Ex: `user@domain.onmicrosoft.com`
 
 ### Task 2: Create existing resources
 
@@ -84,11 +85,11 @@ In this task, you will leverage a custom Azure Resource Manager (ARM) template t
 
 4. Fill in the required ARM template parameters.
     - Create a new **Resource group**.
-    - Set **Region** to `North Central US`
+    - Set **Region** to `North Central US`.
     - Specify a **Resource Name Base** (specify a base value that includes your initials to keep unique to prevent naming conflicts, for example, `tailspincp`).
     - Set `Azure Ad User Id` to the Azure AD `id` of the user that was previously copied from the Azure CLI.
     - Set the `Azure Ad User Login` to the Azure AD `userPrincipalName` that was previously copied from the Azure CLI.
-    - Select **Review + create**
+    - Select **Review + create**.
 
 5. Agree to the Terms and conditions and select **Create**.
 
