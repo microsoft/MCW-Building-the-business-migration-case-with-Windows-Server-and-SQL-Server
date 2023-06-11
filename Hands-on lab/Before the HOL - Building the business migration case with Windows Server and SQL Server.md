@@ -91,6 +91,8 @@ In this task, you will leverage a custom Azure Resource Manager (ARM) template t
     - Set the `Azure Ad User Login` to the Azure AD `userPrincipalName` that was previously copied from the Azure CLI.
     - Select **Review + create**.
 
+    ![Azure Portal Create a new deployment standard window with entries to add all options needed to deploy the ARM template.](images/CustomDeployment-laststep.png "Fill in the required ARM template parameters")
+
 5. Agree to the Terms and conditions and select **Create**.
 
     The deployment is now underway. On average, this process can take anywhere between 2 to 4 hours to complete. It is important that you monitor the deployment progress to ensure there are no problems. You can monitor progress by selecting the notification bell in the upper right corner and selecting **Deployment in progress...**
