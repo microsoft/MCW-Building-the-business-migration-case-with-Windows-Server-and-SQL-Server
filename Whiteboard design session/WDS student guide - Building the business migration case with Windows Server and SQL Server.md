@@ -67,7 +67,7 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 ### Customer situation
 
-Tailspin Toys is a global manufacturer of children’s toys that was founded in 1957 with its global headquarters located in Milwaukee, WI. Their mission-critical workloads are currently hosted in an on-premises datacenter and they are beginning a journey to modernize and migrate into the cloud using Microsoft Azure.
+Tailspin Toys is a global manufacturer of children’s toys that was founded in 1957 with its global headquarters located in Milwaukee, WI. Their mission-critical workloads are currently hosted in an on-premises datacenter, and they are beginning a journey to modernize and migrate into the cloud using Microsoft Azure.
 
 During the Envision Workshop, Kaylee Frye, CTO of Tailspin Toys, saw the value of digital transformation, adopting the Microsoft Azure cloud, and modernizing their infrastructure. This transformation will be crucial, as much of their on-premises datacenter hardware is scheduled to be either retired or replaced within 24 months. Kaylee has already had the Technical Architects at Tailspin Toys begin assessing their current environment and what it will take to migrate to the cloud. They are looking to optimize their technology investments by reducing technical debt, streamlining operations, and simplifying their DevOps workflow. According to Kaylee Frye, "Our development teams have already begun adopting DevOps strategies and implemented CI/CD (continuous integration and continuous delivery) pipelines with Azure DevOps. We really look forward to better streamlining IT operations as we adopt Microsoft Azure for the infrastructure too."
 
@@ -96,7 +96,7 @@ The initial workload they've identified for the first phase of the Azure migrati
     - Database 2: 435 GB
     - Database 3: 50 GB
 
-This initial workload is not a mission critical application. However, it is representative of the typical VMs, databases and application architectures that are common across many of the other workloads that will be migrated to Azure. They've identified this workload as a good candidate for the first phase, POC migration to gain their confidence in migrating their mission critical workloads in later phases of the migration migration.
+This initial workload is not a mission critical application. However, it is representative of the typical VMs, databases and application architectures that are common across many of the other workloads that will be migrated to Azure. They've identified this workload as a good candidate for the first phase, POC migration to gain confidence in migrating their mission critical workloads in later phases of the migration migration.
 
 They have identified several different types of on-premises workloads that may not be migrated to Azure, but would like some advice on how to handle these:
 
