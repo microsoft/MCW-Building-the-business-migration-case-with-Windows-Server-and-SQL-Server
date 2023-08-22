@@ -4,7 +4,7 @@ This directory contains the Before Hands-on Lab setup deployment scripts for cre
 
 Select the button below to deploy the existing Tailspin Toys resources for the HOL to your Azure Subscription:
 
-[![Deploy To Azure](https://raw.githubusercontent.com/solliancenet/Building-the-business-migration-case-with-Windows-Server-and-SQL-Server/lab/Hands-on%20lab/images/deploytoazure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FMCW-Building-the-business-migration-case-with-Windows-Server-and-SQL-Server%2Fmain%2FHands-on%2520lab%2Fresources%2Fdeployment%2Fdeploy.json)
+[![Deploy To Azure](https://raw.githubusercontent.com/solliancenet/Building-the-business-migration-case-with-Windows-Server-and-SQL-Server/lab/Hands-on%20lab/images/deploytoazure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSolliancenet%2FBuilding-the-business-migration-case-with-Windows-Server-and-SQL-Server%2Flab%2FHands-on%20lab%2Fresources%2Fdeployment%2Fdeploy.json)
 
 The following resources will be provisioned:
 
