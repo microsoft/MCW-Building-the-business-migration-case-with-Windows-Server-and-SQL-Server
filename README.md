@@ -1,6 +1,7 @@
 # Building the business migration case with Windows Server and SQL Server
 
-## NOTE: This workshop will retire November 16, 2023. This workshop is no longer being maintained.
+## NOTE: This workshop is archived and no longer being maintained. Content is read-only.
+
 
 Tailspin Toys is a global manufacturer of children’s toys that was founded in 1957 with its global headquarters located in Milwaukee, WI. Their mission-critical workloads are currently hosted in an on-premises datacenter and are beginning a journey to modernize and migrate into the cloud using Microsoft Azure.
 
